@@ -1,0 +1,229 @@
+---
+import About, { frontmatter as about } from "../content/about.md";
+import Collaboration, {
+  frontmatter as collaboration,
+} from "../content/collaboration.md";
+import Experience, { frontmatter as experience } from "../content/experience.md";
+import More, { frontmatter as more } from "../content/more.md";
+import News, { frontmatter as news } from "../content/news.md";
+import Profile, { frontmatter as profile } from "../content/profile.md";
+import PublicationsContent, {
+  frontmatter as publicationsContent,
+} from "../content/publications.md";
+import Research, { frontmatter as research } from "../content/research.md";
+import Talks, { frontmatter as talks } from "../content/talks.md";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { preparePublications } from "../lib/publications";
+
+const publications = preparePublications(publicationsContent.publications);
+
+const navItems = [
+  ["Home", "#about"],
+  ["Research", "#research"],
+  ["Collaboration", "#collaboration"],
+  ["Talks", "#talks"],
+  ["News", "#news"],
+  ["Publications", "#publications"],
+  ["Experience", "#experience"],
+  ["More", "#more"],
+];
+
+const pageDescription =
+  "Academic homepage of Weicai Long, a Ph.D. candidate at HKUST(GZ) working on genomic foundation models, multimodal LLMs, AI agents, and digital health.";
+---
+
+<BaseLayout title="Weicai Long | Academic Homepage" description={pageDescription}>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#about" aria-label="Go to introduction">
+        {profile.name}
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        {navItems.map(([label, href]) => <a href={href}>{label}</a>)}
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-grid section-shell" id="main-content">
+    <aside class="profile-sidebar" aria-label="Profile">
+      <div class="profile-inner">
+        <picture>
+          <source
+            srcset="/images/profile-480.jpg 480w, /images/profile-960.jpg 960w"
+            sizes="(max-width: 720px) 180px, 230px"
+          />
+          <img
+            class="portrait"
+            src="/images/profile-960.jpg"
+            alt={profile.imageAlt}
+            width="640"
+            height="960"
+            fetchpriority="high"
+          />
+        </picture>
+        <h1>
+          {profile.name}
+          <span lang="zh-CN">{profile.nameZh}</span>
+        </h1>
+        <p class="role">{profile.role}</p>
+        <p class="affiliation">
+          <a href={profile.affiliationUrl} target="_blank" rel="noopener noreferrer">
+            {profile.affiliation}
+          </a>
+        </p>
+        <p class="location">{profile.location}</p>
+        <div class="profile-links">
+          <span class="email-address">{profile.email}</span>
+          <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer">
+            Google Scholar
+          </a>
+        </div>
+        <Profile />
+      </div>
+    </aside>
+
+    <div class="academic-content">
+      <section class="content-section" id="about">
+        <h2>{about.title}</h2>
+        <div class="rendered-content"><About /></div>
+      </section>
+
+      <section class="content-section" id="research">
+        <h2>{research.title}</h2>
+        <div class="rendered-content research-content"><Research /></div>
+      </section>
+
+      <section class="content-section" id="collaboration">
+        <h2>{collaboration.title}</h2>
+        <div class="rendered-content"><Collaboration /></div>
+      </section>
+
+      <section class="content-section" id="talks">
+        <h2>{talks.title}</h2>
+        <ul class="news-list">
+          {
+            talks.items.map((item: { date: string; text: string; url?: string; linkText?: string }) => (
+              <li>
+                <time>{item.date}</time>
+                <span>
+                  {item.text}{" "}
+                  {item.url && (
+                    <>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer">
+                        {item.linkText ?? "Link"}
+                      </a>
+                      .
+                    </>
+                  )}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+        <Talks />
+      </section>
+
+      <section class="content-section" id="news">
+        <h2>{news.title}</h2>
+        <ul class="news-list">
+          {
+            news.items.map((item: { date: string; text: string }) => (
+              <li>
+                <time>{item.date}</time>
+                <span>{item.text}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <News />
+      </section>
+
+      <section class="content-section" id="publications">
+        <div class="section-title-row">
+          <h2>{publicationsContent.title}</h2>
+          <a
+            href={publicationsContent.fullListUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {publicationsContent.fullListText}
+          </a>
+        </div>
+        <p class="section-note">{publicationsContent.note}</p>
+        <ol class="publication-list" reversed start={publications.length}>
+          {
+            publications.map((publication) => (
+              <li class="publication-item" value={publication.number}>
+                <p class="publication-title">
+                  {publication.href ? (
+                    <a
+                      href={publication.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {publication.title}
+                    </a>
+                  ) : (
+                    publication.title
+                  )}
+                </p>
+                <p class="publication-authors">
+                  {publication.authors.map((author, index) => (
+                    <>
+                      {index > 0 ? ", " : ""}
+                      <span class:list={{ "author-self": author.self }}>{author.name}</span>
+                      {author.equal && <sup>†</sup>}
+                    </>
+                  ))}
+                </p>
+                <p class="publication-venue">
+                  {publication.venue}, {publication.year}.
+                  {
+                    publication.ranking && (
+                      <span class="publication-ranking">[{publication.ranking}]</span>
+                    )
+                  }
+                </p>
+              </li>
+            ))
+          }
+        </ol>
+        <PublicationsContent />
+      </section>
+
+      <section class="content-section" id="experience">
+        <h2>{experience.title}</h2>
+        <div class="experience-list">
+          {
+            experience.items.map(
+              (item: { role: string; organization: string; dates: string; summary: string }) => (
+                <article class="entry">
+                  <div class="entry-heading">
+                    <h3>{item.role}, {item.organization}</h3>
+                    <time>{item.dates}</time>
+                  </div>
+                  <p>{item.summary}</p>
+                </article>
+              ),
+            )
+          }
+        </div>
+        <Experience />
+      </section>
+
+      <section class="content-section" id="more">
+        <h2>{more.title}</h2>
+        <div class="rendered-content more-content"><More /></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-inner">
+      <p>© 2026 {profile.name} ({profile.nameZh})</p>
+      <p>Last updated July 2026</p>
+    </div>
+  </footer>
+</BaseLayout>

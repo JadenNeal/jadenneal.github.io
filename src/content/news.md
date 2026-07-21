@@ -1,0 +1,22 @@
+---
+title: "News"
+items:
+  - date: "Jul 2026"
+    text: "BioMaster is published in Patterns."
+  - date: "Jul 2026"
+    text: "GenomeQA and PhageBench are accepted by ACL 2026."
+  - date: "Jun 2026"
+    text: "Porcine MutBERT is published in Briefings in Bioinformatics."
+  - date: "Mar 2026"
+    text: "NyxBind is published in Briefings in Bioinformatics."
+  - date: "Jul 2025"
+    text: "MutBERT is accepted by ISMB 2025."
+  - date: "Aug 2024"
+    text: "Started my Ph.D. in Data Science and Analytics at HKUST(GZ)."
+  - date: "Sep 2023"
+    text: "Started working full-time at HONOR as a Sport Health Algorithm Engineer."
+  - date: "Sep 2023"
+    text: "BPNet is published in Biomedical Signal Processing and Control."
+  - date: "Jun 2022"
+    text: "Started an internship at HONOR, working on cuffless blood-pressure estimation."
+---
