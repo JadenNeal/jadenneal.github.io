@@ -13,6 +13,7 @@ import PublicationsContent, {
 import Research, { frontmatter as research } from "../content/research.md";
 import Talks, { frontmatter as talks } from "../content/talks.md";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { parseInlineLinks } from "../lib/inline-links";
 import { preparePublications } from "../lib/publications";
 
 const publications = preparePublications(publicationsContent.publications);
@@ -79,6 +80,9 @@ const pageDescription =
           <a href={profile.scholarUrl} target="_blank" rel="noopener noreferrer">
             Google Scholar
           </a>
+          <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
         </div>
         <Profile />
       </div>
@@ -132,7 +136,17 @@ const pageDescription =
             news.items.map((item: { date: string; text: string }) => (
               <li>
                 <time>{item.date}</time>
-                <span>{item.text}</span>
+                <span>
+                  {parseInlineLinks(item.text).map((segment) =>
+                    segment.type === "link" ? (
+                      <a href={segment.href} target="_blank" rel="noopener noreferrer">
+                        {segment.label}
+                      </a>
+                    ) : (
+                      segment.value
+                    ),
+                  )}
+                </span>
               </li>
             ))
           }

@@ -26,9 +26,22 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /\[Full List\]/);
   assert.match(html, /10\.1016\/j\.patter\.2026\.101611/);
   assert.match(html, /10\.1093\/bib\/bbag182/);
+  assert.match(
+    html,
+    /<a href="https:\/\/doi\.org\/10\.1016\/j\.patter\.2026\.101611"[^>]*>BioMaster<\/a>/,
+  );
+  assert.match(
+    html,
+    /<a href="https:\/\/doi\.org\/10\.18653\/v1\/2026\.acl-long\.1655"[^>]*>GenomeQA<\/a>/,
+  );
+  assert.match(
+    html,
+    /<a href="https:\/\/doi\.org\/10\.18653\/v1\/2026\.findings-acl\.1432"[^>]*>PhageBench<\/a>/,
+  );
   assert.doesNotMatch(html, /Lightweight DNA-Text Multimodal Instruction Tuning/);
   assert.match(html, /longwc819@gmail\.com/);
   assert.doesNotMatch(html, /mailto:longwc819@gmail\.com/i);
+  assert.match(html, /https:\/\/github\.com\/JadenNeal/);
   assert.match(html, /https:\/\/zhyanlin\.github\.io/);
   assert.match(html, /https:\/\/sites\.google\.com\/ucsc\.edu\/jiahengwei/);
   assert.match(html, /4Gk6gSIAAAAJ/);
@@ -37,7 +50,7 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /<h2>Talks<\/h2>/);
   assert.match(html, /XJ98pNdHTzs/);
   assert.match(html, /Jul 2025/);
-  assert.match(html, /I gave an oral presentation at ISMB\/ECCB 2025/);
+  assert.match(html, /oral presentation at ISMB\/ECCB 2025/);
   assert.doesNotMatch(html, /I have end-to-end research experience/);
   assert.match(html, /Large language models/);
   assert.match(html, /Genome sequence modeling/);
