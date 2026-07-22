@@ -68,7 +68,7 @@ publications:
     venue: "Bioinformatics"
     year: "2026"
     date: "2026-07-20"
-    ranking: "IF: 7.3 · SCI-Q1"
+    ranking: "IF: 5.5 · CCF-A"
     authors:
       - name: "Weicai Long"
         self: true
@@ -145,7 +145,7 @@ publications:
     year: "2025"
     date: "2025-07-31"
     href: "https://doi.org/10.1093/bioinformatics/btaf229"
-    ranking: "IF: 5.5 · SCI-Q1 · ISMB: Top Conference"
+    ranking: "IF: 5.5 · CCF-A · ISMB: Top Conference"
     authors:
       - name: "Weicai Long"
         self: true
