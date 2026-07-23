@@ -2,6 +2,6 @@
 title: "Research Interests"
 ---
 
-- **Large language models.** Pretraining and post-training of foundation models, including data curation, efficient sequence modeling, SFT, RL, and agent systems for automated model adaptation.
-- **Genome sequence modeling.** Foundation models for DNA and other biological sequences, with an emphasis on population-scale genetic variation, sequence-language multimodal alignment, and functional genomics prediction.
-- **Digital health.** Machine learning for ECG, PPG, and other physiological signals, including cuffless and continuous blood-pressure estimation, personalized health assessment, and AI-assisted family-doctor and primary-care applications.
+- **BioMedical foundation models.** Pretraining and representation learning for biological sequences and heterogeneous biomedical data, including genome language models, and multimodal modeling of physiological signals, laboratory tests, and clinical information.
+- **Medical LLM post-training.** Domain-specific data construction, SFT, RL, and evaluation for improving medical reasoning, factuality, safety, and reliability.
+- **Agents for healthcare systems.** Tool-augmented and workflow-oriented agents for patient- and clinician-facing healthcare applications, with an emphasis on information gathering, multi-step task execution, long-term interaction, and effective human–AI collaboration.
