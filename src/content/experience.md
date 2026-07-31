@@ -8,5 +8,5 @@ items:
   - role: "Sport Health Algorithm Intern"
     organization: "HONOR"
     dates: "Jun 2022 - Nov 2022"
-    summary: "Researched cuffless blood-pressure estimation and developed BPNet and BP-LKA, which later resulted in two peer-reviewed publications."
+    summary: "Researched cuffless blood-pressure estimation and developed BPNet and BP-LKA."
 ---
