@@ -5,6 +5,11 @@ title: "Teaching & Service"
 - Teaching Assistant, Design and Analysis of Algorithms, HKUST(GZ), 2025 and 2026.
 - Teaching Assistant, Pattern Recognition, Tsinghua University, 2021.
 
+## Languages
+
+- Chinese — Native speaker.
+- English — Fluent (professional working proficiency).
+
 ## Patent
 
 - A Blood Pressure Prediction Apparatus and Device, CN115836847B.

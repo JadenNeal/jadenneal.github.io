@@ -217,6 +217,14 @@ img {
   color: var(--heading);
 }
 
+.job-market-note {
+  color: #b42318;
+}
+
+.job-market-note strong {
+  font-weight: 700;
+}
+
 .news-list {
   margin: 0;
   padding: 0;
