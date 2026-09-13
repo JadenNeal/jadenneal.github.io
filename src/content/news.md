@@ -19,6 +19,6 @@ items:
     text: "[BPNet](https://doi.org/10.1016/j.bspc.2023.105287) is published in Biomedical Signal Processing and Control."
   - date: "Oct 2022"
     text: "[BP-LKA](https://doi.org/10.1145/3604078.3604135) accepted to ICDIP 2023."
-  - date: "Jun 2022"
+  - date: "May 2022"
     text: "Started an internship at HONOR, working on cuffless blood-pressure estimation."
 ---

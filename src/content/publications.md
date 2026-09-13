@@ -10,9 +10,9 @@ publications:
   - title: "BioMaster: Multi-agent system for automated bioinformatics analysis workflow"
     venue: "Patterns"
     year: "2026"
-    date: "2026-07-31"
+    date: "2026-07-07"
     href: "https://doi.org/10.1016/j.patter.2026.101611"
-    ranking: "IF: 10.8 · SCI-Q1"
+    ranking: "JCR-Q1 · IF: 10.8"
     authors:
       - name: "Houcheng Su"
       - name: "Junning Feng"
@@ -64,11 +64,12 @@ publications:
       - name: "Junning Feng"
       - name: "Yanlin Zhang"
 
-  - title: "GenomeHarness: Harnessing AI Agents for Reliable Adaptation of Genome Language Models [Under review]"
+  - title: "GenomeHarness: Harnessing AI Agents for Reliable Adaptation of Genome Language Models"
     venue: "Bioinformatics"
     year: "2026"
-    date: "2026-07-20"
-    ranking: "IF: 5.5 · CCF-A"
+    date: "2026-08-31"
+    href: "https://arxiv.org/abs/2608.21916"
+    ranking: "CCF-A · JCR-Q1 · IF: 5.5 · Under review"
     authors:
       - name: "Weicai Long"
         self: true
@@ -77,12 +78,12 @@ publications:
       - name: "Junning Feng"
       - name: "Yanlin Zhang"
 
-  - title: "ContextTAD: Context-aware boundary learning for TAD calling from Hi-C contact maps [Under review]"
+  - title: "ContextTAD: Context-aware boundary learning for TAD calling from Hi-C contact maps"
     venue: "Nucleic Acids Research"
     year: "2026"
-    date: "2026-07-10"
+    date: "2026-05-08"
     href: "https://doi.org/10.64898/2026.05.08.723772"
-    ranking: "IF: 15.0"
+    ranking: "JCR-Q1 · IF: 15.0 · Under review"
     authors:
       - name: "Weicai Long"
         self: true
@@ -96,7 +97,7 @@ publications:
     year: "2026"
     date: "2026-06-30"
     href: "https://doi.org/10.1093/bib/bbag319"
-    ranking: "IF: 7.3 · SCI-Q2"
+    ranking: "CCF-B · JCR-Q1 · IF: 7.3"
     authors:
       - name: "Weicai Long"
         self: true
@@ -113,9 +114,9 @@ publications:
   - title: "NyxBind: enhancing deep neural representations for transcription factor binding site prediction via contrastive learning"
     venue: "Briefings in Bioinformatics"
     year: "2026"
-    date: "2026-03-31"
+    date: "2026-03-01"
     href: "https://doi.org/10.1093/bib/bbag182"
-    ranking: "IF: 7.3 · SCI-Q2"
+    ranking: "CCF-B · JCR-Q1 · IF: 7.3"
     authors:
       - name: "Xu Yang"
       - name: "Qingfa Xiao"
@@ -145,7 +146,7 @@ publications:
     year: "2025"
     date: "2025-07-31"
     href: "https://doi.org/10.1093/bioinformatics/btaf229"
-    ranking: "IF: 5.5 · CCF-A · ISMB: Top Conference"
+    ranking: "CCF-A · JCR-Q1 · IF: 5.5 · ISMB: Top Conference"
     authors:
       - name: "Weicai Long"
         self: true
@@ -174,7 +175,7 @@ publications:
     year: "2023"
     date: "2023-09-30"
     href: "https://doi.org/10.1016/j.bspc.2023.105287"
-    ranking: "IF: 5.7 · SCI-Q2"
+    ranking: "JCR-Q2 · IF: 5.7"
     authors:
       - name: "Weicai Long"
         self: true

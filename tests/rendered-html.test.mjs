@@ -10,6 +10,11 @@ async function renderedHomepage() {
 
 test("builds the complete academic homepage from Markdown content", async () => {
   const html = await renderedHomepage();
+  const publicationSection = html.match(
+    /<section class="content-section" id="publications">([\s\S]*?)<\/section>/,
+  )?.[1];
+
+  assert.ok(publicationSection, "publication section should be rendered");
 
   assert.match(html, /<title>Weicai Long \| Academic Homepage<\/title>/i);
   assert.match(html, /Weicai Long/);
@@ -27,17 +32,18 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /10\.1016\/j\.patter\.2026\.101611/);
   assert.match(html, /10\.1093\/bib\/bbag182/);
   assert.match(
-    html,
-    /<a href="https:\/\/doi\.org\/10\.1016\/j\.patter\.2026\.101611"[^>]*>BioMaster<\/a>/,
+    publicationSection,
+    /BioMaster: Multi-agent system for automated bioinformatics analysis workflow\s*<a class="publication-link" href="https:\/\/doi\.org\/10\.1016\/j\.patter\.2026\.101611"[^>]*>\[link\]<\/a>/,
   );
   assert.match(
-    html,
-    /<a href="https:\/\/doi\.org\/10\.18653\/v1\/2026\.acl-long\.1655"[^>]*>GenomeQA<\/a>/,
+    publicationSection,
+    /GenomeQA: Benchmarking General Large Language Models for Genome Sequence Understanding\s*<a class="publication-link" href="https:\/\/doi\.org\/10\.18653\/v1\/2026\.acl-long\.1655"[^>]*>\[link\]<\/a>/,
   );
   assert.match(
-    html,
-    /<a href="https:\/\/doi\.org\/10\.18653\/v1\/2026\.findings-acl\.1432"[^>]*>PhageBench<\/a>/,
+    publicationSection,
+    /PhageBench: Can LLMs Understand Raw Bacteriophage Genomes\?\s*<a class="publication-link" href="https:\/\/doi\.org\/10\.18653\/v1\/2026\.findings-acl\.1432"[^>]*>\[link\]<\/a>/,
   );
+  assert.doesNotMatch(publicationSection, /<a[^>]*>BioMaster[^<]*<\/a>/);
   assert.doesNotMatch(html, /Lightweight DNA-Text Multimodal Instruction Tuning/);
   assert.match(html, /longwc819@gmail\.com/);
   assert.doesNotMatch(html, /mailto:longwc819@gmail\.com/i);
@@ -46,7 +52,9 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /https:\/\/sites\.google\.com\/ucsc\.edu\/jiahengwei/);
   assert.match(html, /4Gk6gSIAAAAJ/);
   assert.match(html, /Started an internship at HONOR/);
-  assert.match(html, /Jun 2022 - Nov 2022/);
+  assert.match(html, /May 2022 - Nov 2022/);
+  assert.match(html, /more than 10,000 participants/);
+  assert.match(html, /HONOR Watch 5 Pro/);
   assert.match(html, /<h2>Talks<\/h2>/);
   assert.match(html, /XJ98pNdHTzs/);
   assert.match(html, /Jul 2025/);
@@ -62,12 +70,14 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /English — Fluent \(professional working proficiency\)/);
   assert.match(html, /To Prospective Collaborators/);
   assert.match(html, /always open to collaboration with researchers and students/);
-  assert.match(html, /IF: 10\.8 · SCI-Q1/);
-  assert.match(html, /IF: 7\.3 · SCI-Q2/);
-  assert.match(html, /IF: 15\.0/);
-  assert.match(html, /IF: 5\.5 · CCF-A · ISMB: Top Conference/);
-  assert.match(html, /IF: 5\.7 · SCI-Q2/);
+  assert.match(html, /JCR-Q1 · IF: 10\.8/);
+  assert.match(html, /CCF-B · JCR-Q1 · IF: 7\.3/);
+  assert.match(html, /JCR-Q1 · IF: 15\.0 · Under review/);
+  assert.match(html, /CCF-A · JCR-Q1 · IF: 5\.5 · ISMB: Top Conference/);
+  assert.match(html, /JCR-Q2 · IF: 5\.7/);
+  assert.doesNotMatch(publicationSection, /SCI(?:E)?-?Q[1-4]/i);
   assert.match(html, /CCF-A/);
+  assert.match(html, /CN119235280B/);
   assert.doesNotMatch(html, /<h2>Education<\/h2>|href="#education"/i);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
 });

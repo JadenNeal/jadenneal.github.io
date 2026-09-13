@@ -171,16 +171,19 @@ const pageDescription =
             publications.map((publication) => (
               <li class="publication-item" value={publication.number}>
                 <p class="publication-title">
-                  {publication.href ? (
-                    <a
-                      href={publication.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {publication.title}
-                    </a>
-                  ) : (
-                    publication.title
+                  {publication.title}
+                  {publication.href && (
+                    <>
+                      {" "}
+                      <a
+                        class="publication-link"
+                        href={publication.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        [link]
+                      </a>
+                    </>
                   )}
                 </p>
                 <p class="publication-authors">
@@ -212,13 +215,27 @@ const pageDescription =
         <div class="experience-list">
           {
             experience.items.map(
-              (item: { role: string; organization: string; dates: string; summary: string }) => (
+              (item: { role: string; organization: string; dates: string; highlights: string[] }) => (
                 <article class="entry">
                   <div class="entry-heading">
                     <h3>{item.role}, {item.organization}</h3>
                     <time>{item.dates}</time>
                   </div>
-                  <p>{item.summary}</p>
+                  <ul class="experience-highlights">
+                    {item.highlights.map((highlight) => (
+                      <li>
+                        {parseInlineLinks(highlight).map((segment) =>
+                          segment.type === "link" ? (
+                            <a href={segment.href} target="_blank" rel="noopener noreferrer">
+                              {segment.label}
+                            </a>
+                          ) : (
+                            segment.value
+                          ),
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               ),
             )
@@ -237,7 +254,7 @@ const pageDescription =
   <footer class="site-footer">
     <div class="section-shell footer-inner">
       <p>© 2026 {profile.name} ({profile.nameZh})</p>
-      <p>Last updated July 2026</p>
+      <p>Last updated September 2026</p>
     </div>
   </footer>
 </BaseLayout>

@@ -12,7 +12,8 @@ title: "Teaching & Service"
 
 ## Patent
 
-- A Blood Pressure Prediction Apparatus and Device, CN115836847B.
+- A Blood Pressure Prediction Apparatus and Device (granted), Xingjun Wang and Weicai Long, 2025, CN115836847B.
+- A Blood Pressure Measurement Method and Related Devices (granted), Weicai Long, 2025, CN119235280B.
 
 ## Awards
 
