@@ -30,7 +30,7 @@ const navItems = [
 ];
 
 const pageDescription =
-  "Academic homepage of Weicai Long, a Ph.D. candidate at HKUST(GZ) working on genomic foundation models, multimodal LLMs, AI agents, and digital health.";
+  "Academic homepage of Weicai Long, a Ph.D. candidate at HKUST(GZ) working on biomedical LLMs, agentic post-training, and LLM benchmarks.";
 ---
 
 <BaseLayout title="Weicai Long | Academic Homepage" description={pageDescription}>
@@ -82,6 +82,9 @@ const pageDescription =
           </a>
           <a href={profile.githubUrl} target="_blank" rel="noopener noreferrer">
             GitHub
+          </a>
+          <a href={profile.cvUrl} target="_blank" rel="noopener" hreflang="zh-CN" type="application/pdf">
+            {profile.cvLabel}
           </a>
         </div>
         <Profile />
@@ -254,7 +257,7 @@ const pageDescription =
   <footer class="site-footer">
     <div class="section-shell footer-inner">
       <p>© 2026 {profile.name} ({profile.nameZh})</p>
-      <p>Last updated September 2026</p>
+      <p>Last updated November 2026</p>
     </div>
   </footer>
 </BaseLayout>

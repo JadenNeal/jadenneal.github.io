@@ -48,6 +48,7 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /longwc819@gmail\.com/);
   assert.doesNotMatch(html, /mailto:longwc819@gmail\.com/i);
   assert.match(html, /https:\/\/github\.com\/JadenNeal/);
+  assert.match(html, /<a href="\/weicai-long-cv-zh\.pdf"[^>]*>CV \(中文 PDF\)<\/a>/);
   assert.match(html, /https:\/\/zhyanlin\.github\.io/);
   assert.match(html, /https:\/\/sites\.google\.com\/ucsc\.edu\/jiahengwei/);
   assert.match(html, /4Gk6gSIAAAAJ/);
@@ -60,9 +61,9 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /Jul 2025/);
   assert.match(html, /oral presentation at ISMB\/ECCB 2025/);
   assert.doesNotMatch(html, /I have end-to-end research experience/);
-  assert.match(html, /BioMedical foundation models/);
-  assert.match(html, /Medical LLM post-training/);
-  assert.match(html, /Agents for healthcare systems/);
+  assert.match(html, /<strong>Biomedical LLMs\.<\/strong>/);
+  assert.match(html, /<strong>Agentic Post-Training\.<\/strong>/);
+  assert.match(html, /<strong>LLM Benchmark\.<\/strong>/);
   assert.match(html, /class="job-market-note"/);
   assert.match(html, /currently on the job market and open to opportunities in both academia and industry/);
   assert.match(html, /<h2 id="languages">Languages<\/h2>/);
@@ -72,7 +73,7 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /always open to collaboration with researchers and students/);
   assert.match(html, /JCR-Q1 · IF: 10\.8/);
   assert.match(html, /CCF-B · JCR-Q1 · IF: 7\.3/);
-  assert.match(html, /JCR-Q1 · IF: 15\.0 · Under review/);
+  assert.match(html, /JCR-Q1 · IF: 15\.0 · Accepted/);
   assert.match(html, /CCF-A · JCR-Q1 · IF: 5\.5 · ISMB: Top Conference/);
   assert.match(html, /JCR-Q2 · IF: 5\.7/);
   assert.doesNotMatch(publicationSection, /SCI(?:E)?-?Q[1-4]/i);
@@ -80,6 +81,12 @@ test("builds the complete academic homepage from Markdown content", async () => 
   assert.match(html, /CN119235280B/);
   assert.doesNotMatch(html, /<h2>Education<\/h2>|href="#education"/i);
   assert.doesNotMatch(html, /codex-preview|Building your site|react-loading-skeleton/i);
+});
+
+test("ships the public CV linked from the homepage", async () => {
+  const pdf = await readFile(new URL("dist/weicai-long-cv-zh.pdf", projectRoot));
+
+  assert.equal(pdf.subarray(0, 5).toString(), "%PDF-");
 });
 
 test("numbers publications newest-first while keeping the earliest paper at 1", async () => {

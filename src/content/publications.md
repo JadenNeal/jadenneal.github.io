@@ -67,7 +67,7 @@ publications:
   - title: "GenomeHarness: Harnessing AI Agents for Reliable Adaptation of Genome Language Models"
     venue: "Bioinformatics"
     year: "2026"
-    date: "2026-08-31"
+    date: "2026-08-22"
     href: "https://arxiv.org/abs/2608.21916"
     ranking: "CCF-A · JCR-Q1 · IF: 5.5 · Under review"
     authors:
@@ -83,7 +83,7 @@ publications:
     year: "2026"
     date: "2026-05-08"
     href: "https://doi.org/10.64898/2026.05.08.723772"
-    ranking: "JCR-Q1 · IF: 15.0 · Under review"
+    ranking: "JCR-Q1 · IF: 15.0 · Accepted"
     authors:
       - name: "Weicai Long"
         self: true

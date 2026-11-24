@@ -1,6 +1,8 @@
 ---
 title: "News"
 items:
+  - date: "Nov 2026"
+    text: "[ContextTAD](https://doi.org/10.64898/2026.05.08.723772) was accepted for publication in Nucleic Acids Research."
   - date: "Jul 2026"
     text: "[BioMaster](https://doi.org/10.1016/j.patter.2026.101611) is published in Patterns."
   - date: "Jul 2026"

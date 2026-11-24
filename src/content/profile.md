@@ -8,5 +8,7 @@ location: "Guangzhou, China"
 email: "longwc819@gmail.com"
 scholarUrl: "https://scholar.google.com/citations?user=gAv3xs8AAAAJ&hl=en"
 githubUrl: "https://github.com/JadenNeal"
+cvUrl: "/weicai-long-cv-zh.pdf"
+cvLabel: "CV (中文 PDF)"
 imageAlt: "Weicai Long standing in front of a traditional Chinese pavilion"
 ---

@@ -2,8 +2,9 @@
 title: "Teaching & Service"
 ---
 
-- Teaching Assistant, Design and Analysis of Algorithms, HKUST(GZ), 2025 and 2026.
-- Teaching Assistant, Pattern Recognition, Tsinghua University, 2021.
+- Teaching Assistant, Design and Analysis of Algorithms, HKUST(GZ), Spring 2025 and Spring 2026.
+- Teaching Assistant, Pattern Recognition, Tsinghua University, Spring 2021.
+- Reviewer for ACL 2026, Bioinformatics, Briefings in Bioinformatics, and Biomedical Signal Processing and Control.
 
 ## Languages
 
